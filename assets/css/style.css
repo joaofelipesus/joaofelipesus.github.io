@@ -437,13 +437,25 @@ pre:not(.highlight) {
   color: var(--code-text);
 }
 
-/* language badge */
+/* language badge (only for languages we name below) */
 .highlighter-rouge {
   position: relative;
 }
 
-.highlighter-rouge::before {
-  content: attr(data-lang);
+.highlighter-rouge.language-go::before,
+.highlighter-rouge.language-yaml::before,
+.highlighter-rouge.language-yml::before,
+.highlighter-rouge.language-sh::before,
+.highlighter-rouge.language-bash::before,
+.highlighter-rouge.language-shell::before,
+.highlighter-rouge.language-ruby::before,
+.highlighter-rouge.language-json::before,
+.highlighter-rouge.language-sql::before,
+.highlighter-rouge.language-js::before,
+.highlighter-rouge.language-javascript::before,
+.highlighter-rouge.language-html::before,
+.highlighter-rouge.language-css::before,
+.highlighter-rouge.language-elixir::before {
   position: absolute;
   top: 0;
   right: 0;
@@ -456,15 +468,23 @@ pre:not(.highlight) {
   font-size: 0.6875rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
+  pointer-events: none;
 }
 
 .language-go::before { content: "go"; }
-.language-yaml::before { content: "yaml"; }
+.language-yaml::before,
+.language-yml::before { content: "yaml"; }
 .language-sh::before,
-.language-bash::before { content: "shell"; }
+.language-bash::before,
+.language-shell::before { content: "shell"; }
 .language-ruby::before { content: "ruby"; }
-.language-text::before,
-.language-plaintext::before { content: none; }
+.language-json::before { content: "json"; }
+.language-sql::before { content: "sql"; }
+.language-js::before,
+.language-javascript::before { content: "js"; }
+.language-html::before { content: "html"; }
+.language-css::before { content: "css"; }
+.language-elixir::before { content: "elixir"; }
 
 /* ==========================================================================
    Rouge syntax theme
