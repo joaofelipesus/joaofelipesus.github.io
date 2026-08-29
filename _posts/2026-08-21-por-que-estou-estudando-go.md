@@ -77,7 +77,7 @@ Com isso modelei o `maester` para que executasse uma sequência de comandos SSH,
 
 Como todo bom dev backend gosto de ver os logs da aplicação em produção, o que foi util em algumas sessões de debug. Por padrão apps Rails não escrevem os logs em um arquivo, mas jogam os logs para a saída padrão STDOUT, e como a aplicação está rodando dentro de um container Docker pude adicionar a seguinte configuração  no docker-compose e com isso definir como os logs serão gerenciados.
 
-```YAML
+```yaml
 # total of 50MB of logs, been 10MB for each service
 app:
     logging:
@@ -103,7 +103,7 @@ Apesar de poder tentar executar o comando SSH e caso este falhe sei que algo est
 
 Com isso, foram criadas duas etapas para verificação da disponibilidade da outra máquina, na primeira é executado o comando `ping` e caso este falhe pode ser que o Raspberry Py esteja desligado, ou eu esteja conectado em outra rede.
 
-```Go
+```go
 func PingServer(cfg config, createComand commandFactory) error {
 	fmt.Printf("Start ping server on address %s\n", cfg.serverIP)
 
@@ -121,7 +121,7 @@ func PingServer(cfg config, createComand commandFactory) error {
 
 Caso o ping de certo faço a verificação se o SSH está funcionando na porta padrão, e para isso utilizei o comando `nc (netcat)` que serve para verificar se uma porta esta apta a receber conexões, assim consigo verificar se a máquina está respondendo na porta 22 que é a porta padrão do SSH.
 
-```Go
+```go
 // The command nc (netcat) is used for scan ports
 func CheckSSHAvailable(cfg config, createCommand commandFactory) error {
 	fmt.Printf("Start check SSH port on %s:22", cfg.serverIP)
@@ -144,11 +144,11 @@ Aqui vem a maior quebra de paradigma para um dev Ruby, estamos acostumados a esc
 
 Ao receber como argumento uma interface é possível utilizar tipos diferentes na implementação e nos testes desde que ambos implementem a mesma interface, uma interface que tenho utilizado bastante é a interface `io.Writer`. Com o uso de interfaces, posso definir um buffer ao invés de um arquivo durante a escrita do teste, e com isso ler o conteúdo e dar match com o valor esperado de forma simples.
 
-```Go
+```go
 func run(cfg config, createCommand commandFactory, outputFile io.Writer) { ... }
 ```
 
-```Go
+```go
 // uso em um teste
 
 var mockWriter bytes.Buffer

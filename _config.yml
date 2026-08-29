@@ -4,7 +4,23 @@ author: João Felipe
 
 url: "https://joaofelipesus.github.io"
 
+lang: pt-BR
+timezone: America/Sao_Paulo
+
 markdown: kramdown
+highlighter: rouge
+
+kramdown:
+  input: GFM
+  hard_wrap: false
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    block:
+      line_numbers: false
 
 plugins:
   - jekyll-feed
+
+exclude:
+  - README.md
+  - post_template.md
