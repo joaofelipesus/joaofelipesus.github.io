@@ -1,0 +1,10 @@
+title: João Felipe
+description: Notas sobre programação, projetos e coisas que estou aprendendo.
+author: João Felipe
+
+url: "https://joaofelipesus.github.io"
+
+markdown: kramdown
+
+plugins:
+  - jekyll-feed

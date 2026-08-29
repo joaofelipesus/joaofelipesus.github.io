@@ -1,0 +1,61 @@
+body {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  font-family: sans-serif;
+  line-height: 1.6;
+}
+
+header {
+  margin-bottom: 3rem;
+}
+
+nav {
+  margin-top: 0.5rem;
+}
+
+main {
+  min-height: 70vh;
+}
+
+article h1 {
+  margin-bottom: 0.25rem;
+}
+
+article time {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+footer {
+  margin-top: 4rem;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+figure.post-image {
+  margin: 2rem auto;
+  text-align: center;
+}
+
+figure.post-image img {
+  display: block;
+  margin: 0 auto;
+  max-width: min(320px, 100%);
+  height: auto;
+  border-radius: 8px;
+}
+
+figure.post-image figcaption {
+  margin-top: 0.5rem;
+  color: #666;
+  font-size: 0.9rem;
+}
